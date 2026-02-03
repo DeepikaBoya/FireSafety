@@ -1,0 +1,53 @@
+
+
+
+
+<header class="site-header">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="brand">
+      <img src="assets/file.jpg" alt="Sri Jai Fire Safety And Solutions" class="logo">
+      <span class="brand-text">Sri Jai Fire Safety And Solutions</span>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About us</a>
+      <a routerLink="/services" routerLinkActive="active">Our services</a>
+      <a routerLink="/network" routerLinkActive="active">Our Network</a>
+      <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact us</a>
+    </div>
+  </nav>
+</header>
+
+<router-outlet />
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Sri Jai Fire Safety And Solutions</h3>
+      <p>RELIABLE QUALITY • AFFORDABLE PRICING</p>
+      <p>Professional fire safety solutions for commercial, industrial, and residential premises.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        <li>Fire Extinguishers</li>
+        <li>Fire Alarm Systems</li>
+        <li>Smoke & Heat Detectors</li>
+        <li>Sprinkler Systems</li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Contact Info</h4>
+      <p>📍 58-1-293/1, NAD Junction<br>Visakhapatnam – 530027<br>Andhra Pradesh</p>
+      <p>📞 8143487336</p>
+      <p>📧 srijaifiresafety@gmail.com</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sri Jai Fire Safety And Solutions. All rights reserved.</p>
+  </div>
+</footer>

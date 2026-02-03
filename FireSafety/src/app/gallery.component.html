@@ -1,0 +1,33 @@
+<section class="page gallery">
+  <div class="gallery-header">
+    <h2>Our Work Gallery</h2>
+    <p>Showcasing our professional fire safety installations and completed projects across Visakhapatnam</p>
+  </div>
+  
+  <div class="gallery-grid">
+    <div class="gallery-item" *ngFor="let item of images; let i = index">
+      <img 
+        *ngIf="item.type === 'image'"
+        [src]="item.path" 
+        [alt]="item.caption"
+        (click)="openModal(item.path, item.caption)"
+        (error)="onImageError($event)"
+      />
+      <video 
+        *ngIf="item.type === 'video'"
+        [src]="item.path"
+        controls
+        preload="metadata"
+      ></video>
+      <!-- <p class="image-caption">{{item.caption}}</p> -->
+    </div>
+  </div>
+  
+  <div class="modal" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="modalImage" [alt]="modalCaption">
+      <!-- <p class="modal-caption">{{modalCaption}}</p> -->
+    </div>
+  </div>
+</section>
