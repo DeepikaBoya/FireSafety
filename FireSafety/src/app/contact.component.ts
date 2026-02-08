@@ -19,13 +19,17 @@ export class ContactComponent {
   };
 
   onSubmit() {
+    if (!this.formData.name || !this.formData.email || !this.formData.phone || !this.formData.service) {
+      alert('Please fill in all required fields: Name, Email, Phone, and Service');
+      return;
+    }
+    
     const subject = `Fire Safety Inquiry - ${this.formData.service}`;
     const body = `Name: ${this.formData.name}%0D%0AEmail: ${this.formData.email}%0D%0APhone: ${this.formData.phone}%0D%0AService: ${this.formData.service}%0D%0AMessage: ${this.formData.message}`;
     
     try {
       window.location.href = `mailto:srijaifiresafety@gmail.com?subject=${subject}&body=${body}`;
     } catch (error) {
-      
       const emailText = `To: srijaifiresafety@gmail.com\nSubject: ${subject}\n\n${body.replace(/%0D%0A/g, '\n')}`;
       navigator.clipboard.writeText(emailText);
       alert('Email client not found. Email details copied to clipboard. Please paste in your email app.');
